@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75f80cb9-c9e8-432b-a745-e6135915e816" name="Default" comment="New pratice">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/PLAYONE.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="75f80cb9-c9e8-432b-a745-e6135915e816" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/copy.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/db2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/helloworld.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test10.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test11.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test12.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test13.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test14.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test7.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test8.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Newbie/test9.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -549,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508206982709</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New pratice">
+      <created>1508299136779</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1508299136779</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -639,6 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -775,6 +761,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
