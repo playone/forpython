@@ -16,7 +16,7 @@ while len(soup.select('.visuallyhidden')) > 0:
         counter += 1
         ele.text
         with open('copy.txt', 'a') as f:
-            f.write(ele.text.encode('utf-8') + '\n')
+            f.write(ele.text.encode('utf-8') + '\n') #在此加上轉碼 可以確保寫入檔案不會發生encoding error
     browser.find_element_by_class_name('btn.btn--pagination.btn--small.btn--page-arrow.btn--next').click()
     time.sleep(4)
     soup = BeautifulSoup(browser.page_source, 'html.parser')
