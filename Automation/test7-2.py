@@ -1,5 +1,10 @@
 #encoding: utf-8
 
+"""
+test7的加強版
+爬取多個網頁的資料
+"""
+
 import urllib2
 from bs4 import BeautifulSoup as bs
 import csv
