@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup as bs
 quote_page ='http://www.bloomberg.com/quote/SPX:IND'
 page = urllib2.urlopen(quote_page)
 soup = bs(page, 'html.parser')
-print soup
+#print soup
 name_box = soup.find('h1', attrs={'class' : 'name'})
 name = name_box.text.strip()# strip() 函數用於去除前後空格
 print name
