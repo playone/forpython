@@ -2,6 +2,8 @@
 
 """
 抓取瀑布式網頁的範例
+原本想抓取YAHOO新聞，但YAHOO block了 "window.scrollTo(0, document.body.scrollHeight);"這指令
+所以假如想爬取YAHOO的資料得要使用另外的方法
 """
 
 
