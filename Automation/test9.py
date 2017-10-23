@@ -19,11 +19,11 @@ def execute_times(times):
         driver.execute_script('window.scrollTo(0, document.body.scrollHeight);') #捲動頁面的語法 利用execute script 來執行 "window.scrollTo(0, document.body.scrollHeight);"這指令
         time.sleep(5)
 
-execute_times(10)
+execute_times(10) #呼叫函式 執行10次滾動頁面的動作
 
 soup = bs(driver.page_source, 'html.parser')
 
-for block in soup.select('h4.title'):
+for block in soup.select('h4.title'): #選取我們要爬的資料定位元素 利用for loop 將頁面裡面屬於這元素的文字爬出來
     print block.text
 
 driver.quit()
