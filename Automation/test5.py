@@ -1,5 +1,9 @@
 # encoding: utf-8
 
+"""
+練習用Pandas抓取網頁表格
+"""
+
 import  pandas #導入pandas
 
 dfs = pandas.read_html('http://rate.bot.com.tw/xrt?Lang=zh-TW')
