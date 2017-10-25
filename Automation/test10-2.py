@@ -5,6 +5,11 @@
 """
 
 import urllib,urllib2
+import requests
+import pandas
+from bs4 import BeautifulSoup as bs
+
+
 url = "http://www.thsrc.com.tw/tw/TimeTable/SearchResult"
 request = urllib2.Request(url)
 request.add_header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36")
@@ -40,11 +45,31 @@ form_data = {
     "EarlyOrLater":""
 }
 
+res = requests.post("http://www.thsrc.com.tw/tw/TimeTable/SearchResult", data=form_data)
 
+info = pandas.read_html(res.text, header=0)[0]
+print info
+
+info.to_excel('traintime.xlsx', encoding='UTF-8', index=False)
+
+
+"""
 form_data = urllib.urlencode(form_data)
-response = urllib2.urlopen(request,data=form_data)
+response = urllib2.urlopen(request, data=form_data)
 html = response.read()
 
-file_out = file("test.html",'w')
-file_out.write(html)
+print type(html)
+
+soup = bs(html, 'html.parser')
+
+table = soup.select('section.result_table')
+
+
+file_out = file("table.txt",'w')
+file_out.write(str(table).encode('utf-8'))
 file_out.close()
+"""
+
+
+
+
