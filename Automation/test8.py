@@ -7,6 +7,10 @@
 
 import requests
 from bs4 import BeautifulSoup
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 page = int(input("請輸入要擷取的頁數"))
 for i in range(1,page+1):
@@ -15,4 +19,7 @@ for i in range(1,page+1):
     for title in soup.select(".topic_gen"):
         print ("==============")
         url = str(title.get('href'))
-        print (u"[標題]:"+title.text,"\n"+u"https://www.mobile01.com/"+url)
+        result = ("[標題]:"+title.text, "\n"+"https://www.mobile01.com/"+url)
+        print result
+        with open('copy1.txt', 'a') as f:
+            f.write(str(result) + '\n')
