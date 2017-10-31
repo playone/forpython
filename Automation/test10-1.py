@@ -23,7 +23,7 @@ form_data = {
 form_data = urllib.urlencode(form_data)
 response = urllib2.urlopen(request,data=form_data)
 html = response.read()
-print type(html)
+#print type(html)
 file_out = file("test.html",'w')
 file_out.write(html)
 file_out.close()
