@@ -111,7 +111,7 @@ def main():
     if not os.path.isdir('log'):
         os.makedirs('log')
     logging.basicConfig(filename= 'log/crawl.log',
-                        level=logging.ERROR
+                        #level=logging.ERROR
                         #format= '%(asctime)-15s %(clientip)s %(user)-8s %(message)s',
                         #datefmt='%Y/%m/%d %H/%M/%D'
                         )
@@ -159,7 +159,7 @@ def main():
             Crawler.get_data((first_day.year, first_day.month, first_day.day))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
 
