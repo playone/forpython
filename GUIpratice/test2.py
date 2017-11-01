@@ -6,7 +6,7 @@
 """
 
 from Tkinter import *
-from ttk import *
+
 
 def button_click():
     cd = float(entryCd.get()) #讀取使用者輸入，此時值為字串，需要用float()做轉換
@@ -16,7 +16,7 @@ def button_click():
 root = Tk() #宣告主視窗
 root.title('Entry Test') #主視窗的title
 
-MainFrame = Frame(root, height=100, width=100) #宣告主框架，會將各個widgt放到此框架中
+MainFrame = Frame(root, height=100, width=100) #宣告主框架，會將各個widget放到此框架中
 MainFrame.pack_propagate(0)
 MainFrame.pack(padx = 150, pady = 100)
 
