@@ -1,5 +1,10 @@
 #encoding: utf-8
 
+"""
+基本練習
+建立視窗 建立Label 建立button 同時賦予button功用可執行
+"""
+
 from Tkinter import *
 from ttk import *
 
