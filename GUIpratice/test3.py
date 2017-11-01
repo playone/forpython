@@ -1,5 +1,11 @@
 #encoding: utf-8
 
+"""
+Radio button 和 Check button的練習
+
+"""
+
+
 from Tkinter import *
 
 def colorChecked():
