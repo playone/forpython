@@ -50,6 +50,9 @@ form_data = {
 res = requests.post("http://www.thsrc.com.tw/tw/TimeTable/SearchResult", data=form_data) #利用request.post帶出搜尋結果網頁
 
 info = pandas.read_html(res.text, header=0)[0] #用pandas存成data frame 然後提取table出來
+info = info.ix[1:, 1:5]
+info.columns = [u'車次', u'出發時間', u'抵達時間', u'行車時間']
+info = info.dropna()
 print info #列印結果
 
 info.to_excel('traintime.xlsx', encoding='UTF-8', index=False) #轉入excel
