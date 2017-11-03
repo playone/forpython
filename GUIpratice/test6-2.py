@@ -114,6 +114,7 @@ def okbutton_click():
     #labelResult.configure(text = info)
 
 root = Tk()
+root.geometry('250x600+0+0')
 title = root.title('高鐵時刻查詢')
 
 variable_startstation = StringVar(root) #定義optionmenu所需的變數
@@ -140,8 +141,8 @@ labelTime = Label(root, text = '請選擇時間:').pack(fill = X)
 optionTime = OptionMenu(root, variable_time, *dropdown_options_time)
 optionTime.pack(fill=X)
 
-buttonok = Button(root, text = 'OK', command = okbutton_click).pack(fill = Y)
-buttoncancel = Button(root, text = 'Close', command = root.quit).pack(fill = Y)
+buttonok = Button(root, text = 'OK', command = okbutton_click).pack(fill = X, side=TOP)
+buttoncancel = Button(root, text = 'Close', command = root.quit).pack(fill = X, side=TOP)
 
 labelResult = Label(root, text = '結果').pack(fill = X)
 
@@ -149,7 +150,7 @@ scrollbar = Scrollbar(root) #宣告Scrollbar
 scrollbar.pack(side=RIGHT, fill=Y) #定義scrollbar的位置
 
 text = Text(root, wrap=WORD, yscrollcommand=scrollbar.set) #宣告text 框
-text.pack()
+text.pack(fill=X)
 
 scrollbar.config(command=text.yview)
 
