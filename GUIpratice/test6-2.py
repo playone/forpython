@@ -3,7 +3,7 @@
 """
 GUI實際練習
 將Automation\test10-2 GUI化 part2
-使用到的widget: button, optionmenu, calendar
+使用到的widget: button, optionmenu, calendar, label, scrollbar
 """
 
 from ttkcalendar import *
@@ -28,7 +28,7 @@ stations = { #各站名在高鐵網頁post裡面的form data 代碼，在這裡�
     u'左營':'f2519629-5973-4d08-913b-479cce78a356'  #左營
 }
 
-dropdown_options_stations = [
+dropdown_options_stations = [ #optionmenu 內容
     '南港',
     '台北',
     '板橋',
@@ -43,7 +43,7 @@ dropdown_options_stations = [
     '左營'
 ]
 
-dropdown_options_time = [
+dropdown_options_time = [ #optionmenu 內容
     '05:00',
     '05:30',
     '06:00',
@@ -90,12 +90,10 @@ request.add_header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 
 
 def okbutton_click():
-    result = calendar.selection
-    startstation_code = stations[variable_startstation.get()]
-    endstation_code = stations[variable_endstation.get()]
-    search_data = str(result)[0:10].replace('-', '/')
-    print search_data
-    search_time = variable_time.get() #str(entryTime.get())
+    startstation_code = stations[variable_startstation.get()] #從下拉選單得到值之後，代入字典裏面來取得字典裡的值
+    endstation_code = stations[variable_endstation.get()] #從下拉選單得到值之後，代入字典裏面來取得字典裡的值
+    search_data = str(calendar.selection)[0:10].replace('-', '/') #從月曆得到值之後，轉成字串並整理取得所要的值
+    search_time = variable_time.get() #str(entryTime.get()) #從下拉選單得到值之後，代入變數
     form_data = {
         "StartStation": startstation_code,  # 帶入使用者輸入的起點站
         "EndStation": endstation_code,  # 帶入使用者輸入的終點站
@@ -108,25 +106,25 @@ def okbutton_click():
     res = requests.post("http://www.thsrc.com.tw/tw/TimeTable/SearchResult", data=form_data)  # 利用request.post帶出搜尋結果網頁
 
     info = pandas.read_html(res.text, header=0)[0]  # 用pandas存成data frame 然後提取table出來
-    info = info.ix[1:, 1:5]
-    info.columns = [u'車次', u'出發時間', u'抵達時間', u'行車時間']
-    info = info.dropna()
+    info = info.ix[1:, 1:5] #做dataframe的整理
+    info.columns = [u'車次', u'出發時間', u'抵達時間', u'行車時間'] #做dataframe的整理
+    info = info.dropna() #做dataframe的整理
     print info  # 列印結果
-    text.insert(1.0, info)
+    text.insert(1.0, info) #將結果放入text widget然後顯示在GUI上
     #labelResult.configure(text = info)
 
 root = Tk()
 title = root.title('高鐵時刻查詢')
 
-variable_startstation = StringVar(root)
-variable_startstation.set(dropdown_options_stations[0])
+variable_startstation = StringVar(root) #定義optionmenu所需的變數
+variable_startstation.set(dropdown_options_stations[0]) #定義變數的預設值
 variable_endstation = StringVar(root)
 variable_endstation.set(dropdown_options_stations[11])
 variable_time = StringVar(root)
 variable_time.set(dropdown_options_time[0])
 
 labelStartStation = Label(root, text = '請選擇開始的站名:').pack(fill = X)
-optionStartStation = OptionMenu(root, variable_startstation, *dropdown_options_stations)
+optionStartStation = OptionMenu(root, variable_startstation, *dropdown_options_stations) #定義optionmenu
 optionStartStation.pack(fill=X)
 
 labelEndStation = Label(root, text = '請選擇終點的站名:').pack(fill = X)
@@ -134,7 +132,7 @@ optionEndStation = OptionMenu(root, variable_endstation, *dropdown_options_stati
 optionEndStation.pack(fill=X)
 
 labelDate = Label(root, text = '請選擇日期:').pack(fill = X)
-calendar = Calendar(root)
+calendar = Calendar(root) #定義可選取用的calendar
 calendar.pack()
 
 
@@ -147,10 +145,10 @@ buttoncancel = Button(root, text = 'Close', command = root.quit).pack(fill = Y)
 
 labelResult = Label(root, text = '結果').pack(fill = X)
 
-scrollbar = Scrollbar(root)
-scrollbar.pack(side=RIGHT, fill=Y)
+scrollbar = Scrollbar(root) #宣告Scrollbar
+scrollbar.pack(side=RIGHT, fill=Y) #定義scrollbar的位置
 
-text = Text(root, wrap=WORD, yscrollcommand=scrollbar.set)
+text = Text(root, wrap=WORD, yscrollcommand=scrollbar.set) #宣告text 框
 text.pack()
 
 scrollbar.config(command=text.yview)
