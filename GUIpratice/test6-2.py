@@ -107,7 +107,7 @@ def okbutton_click():
 
     info = pandas.read_html(res.text, header=0)[0]  # 用pandas存成data frame 然後提取table出來
     info = info.ix[1:, 1:5] #做dataframe的整理
-    info.columns = [u'車次', u'出發時間', u'抵達時間', u'行車時間'] #做dataframe的整理
+    info.columns = ['Train', 'Start', 'Arrive', 'Spent'] #做dataframe的整理
     info = info.dropna() #做dataframe的整理
     print info  # 列印結果
     text.insert(1.0, info) #將結果放入text widget然後顯示在GUI上
