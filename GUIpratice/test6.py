@@ -3,6 +3,7 @@
 """
 GUI實際練習
 將Automation\test10-2 GUI化
+有使用到的Widget : Label, Button, Entry, Text, Scrollbar
 """
 
 
