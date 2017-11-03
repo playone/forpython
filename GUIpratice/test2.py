@@ -1,7 +1,7 @@
 #encoding: utf-8
 
 """
-輸入框的練習
+主框架概念的練習加上輸入框的練習
 利用轉換溫度，來做使用者輸入，計算轉換跟顯示的練習
 """
 
@@ -16,11 +16,11 @@ def button_click():
 root = Tk() #宣告主視窗
 root.title('Entry Test') #主視窗的title
 
-MainFrame = Frame(root, height=100, width=100) #宣告主框架，會將各個widget放到此框架中
+MainFrame = Frame(root, height=100, width=100) #宣告主框架，會將各個widget放到此框架中，width是frame的寬度，height是高度
 MainFrame.pack_propagate(0)
-MainFrame.pack(padx = 150, pady = 100)
+MainFrame.pack(padx = 10, pady = 10) #padx=水平方向的內邊距 pady=垂直方向的內邊距
 
-label = Label(MainFrame, text='Convert C to F...', width = 20)
+label = Label(MainFrame, text='Convert C to F...', width = 30)
 label.pack()
 entryCd = Entry(MainFrame, text = 'C')
 entryCd.pack()
