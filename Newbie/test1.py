@@ -1,4 +1,4 @@
-#! C:\Python27
+#! Python2.7
 #encoding: utf-8
 
 """
