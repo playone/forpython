@@ -1,4 +1,4 @@
-#unicode: utf-8
+#encoding: utf-8
 
 """
 抓取瀑布式網頁的範例
