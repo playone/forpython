@@ -51,4 +51,4 @@ class PythonOrgSearch(unittest.TestCase): #命名class, 此class繼承了unittes
         self.driver.quit()
 
 if __name__ == "__main__": #判別是否為被import的狀態
-    unittest.main()
+    unittest.main() #最基本的執行testcase方法
