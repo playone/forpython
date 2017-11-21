@@ -14,15 +14,32 @@ class PythonOrgSearch(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
 
-    def test_search_in_python_org(self):
+    def test_search_in_python_org1(self):
         driver = self.driver
         driver.get("http://www.python.org")
         self.assertIn('Python', driver.title)
         elem = driver.find_element_by_name('q')
-        elem.send_keys('pyccon')
+        elem.send_keys('pycon')
         elem.send_keys(Keys.RETURN)
         assert 'No result found' not in driver.page_source
 
+    def test_search_in_python_org2(self):
+        driver = self.driver
+        driver.get("http://www.python.org")
+        self.assertIn('Python', driver.title)
+        elem = driver.find_element_by_name('q')
+        elem.send_keys('pycon')
+        elem.send_keys(Keys.RETURN)
+        assert 'No result found' not in driver.page_source
+
+    def test_search_in_python_org3(self):
+        driver = self.driver
+        driver.get("http://www.python.org")
+        self.assertIn('Python', driver.title)
+        elem = driver.find_element_by_name('q')
+        elem.send_keys('pycon')
+        elem.send_keys(Keys.RETURN)
+        assert 'No result found' in driver.page_source
 
     def tearDown(self):
         self.driver.quit()
