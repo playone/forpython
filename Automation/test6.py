@@ -18,11 +18,11 @@ driver.get('http://www.baidu.com')
 
 search_result = list(df.iloc[:, 1]) #宣告變數，將dataframework的第二欄放到search_result, 下面會將搜尋完成的結果放到這裡
 #print df
-def search_keyword(word):
+def search_keyword(word): #word 在接下來的引用，會從excel那邊得到值來做此方法的動作
     driver.find_element_by_id('kw').clear()
     driver.find_element_by_id('kw').send_keys(word)
     driver.find_element_by_id('su').click()
-
+    #利用webdriver, 將頁面帶到要處理的地方
     time.sleep(3)
     result = driver.find_element_by_xpath('//*[@id="2"]/h3/a[1]')
     return result.text #定義函式, 搜尋關鍵字並將文字結果回傳出來
