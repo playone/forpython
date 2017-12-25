@@ -19,7 +19,7 @@ from datetime import date
 server_url = 'http://172.16.1.25' #Remine Server的 IP/Domain address
 query_url = 'http://172.16.1.25/projects/internal/issues?query_id=17' #Redmine issue query 的 IP/Domain Address
 cookies = {'_redmine_session':' '}
-#Remine 登入的cookie, 現在是利用safe的帳號登入資訊, 以後可自行換成其他帳號的登入資訊, 只是要小心外流
+#Remine 登入的cookie, 自行換成其他帳號的登入資訊, 只是要小心外流
 
 # 輸入gmail信箱的資訊
 host = "smtp.gmail.com" #Gmail的SMTP address
