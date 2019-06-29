@@ -16,7 +16,7 @@ df = pd.read_excel('keywords.xls') #將excel 內容轉存成dataframework
 driver = webdriver.Chrome()
 driver.get('http://www.baidu.com')
 
-search_result = list(df.iloc[:, 1]) #宣告變數，將dataframework的第二欄放到search_result, 下面會將搜尋完成的結果放到這裡
+search_result = list(df.iloc[:, 1]) #宣告變數，將dataframework的第二欄轉成List, 下面會將搜尋完成的結果放到這裡
 #print df
 def search_keyword(word): #word 在接下來的引用，會從excel那邊得到值來做此方法的動作
     driver.find_element_by_id('kw').clear()
